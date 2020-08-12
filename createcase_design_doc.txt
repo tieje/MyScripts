@@ -1,0 +1,23 @@
+8/12/2020
+
+Brainstorm
+
+My case folders can be found in the following location on my computer:
+
+C:\Users\tfrancis\OneDrive - Hearst\Cases
+
+Client folders are usually defined by three letter words but there are exceptions
+Within the client folder, a case folder titled with a given case number will be created with the following subfolders:
+
+Code
+	- I usually use a [case_number]_scratch.sql file for my personal use
+Deployment
+Documentation
+	- For my level of work, I use a CDD. I might want to copy the CDD to this with the appropriate file name.
+
+I'd like to go even further automate creating folder structures in subversion
+http://subversion.apache.org/docs/
+
+- Be able to run the script from the command line as a python script with the command "createcase.py"
+	- Create a custom_script library and add it to user path
+
