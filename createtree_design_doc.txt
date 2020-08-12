@@ -1,0 +1,11 @@
+8/12/2020
+
+createtree was made as a general file and folder creator that will essentially be the base code for specialized folder and file creators in the future
+
+Questions this will ask:
+Please copy and paste the directory in which you would like to create folders and files, then press enter.
+
+What is the name of a folder you would like to create?
+
+Type the name of another folder you'd like to or type "n", "no", "stop", "done", or "d" to stop folder create.
+

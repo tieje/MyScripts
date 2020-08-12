@@ -21,3 +21,11 @@ http://subversion.apache.org/docs/
 - Be able to run the script from the command line as a python script with the command "createcase.py"
 	- Create a custom_script library and add it to user path
 
+I'd like to make this in such a way that it's reusable throughout my career.
+
+The main idea is to create folders wherever they need to be created.
+
+The script createcase.py will make folders specifically for cases, but I guess I should create a question and answer kind of thing first and work from there. I'll call it, "createtree".
+
+So I'll create createtree command first, then I'll create the createcase command.
+
