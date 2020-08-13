@@ -1,0 +1,1 @@
+Please add MyScripts path to the User Path Directory in environment variables to make it easy to run scripts in the command line.

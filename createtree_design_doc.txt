@@ -3,9 +3,39 @@
 createtree was made as a general file and folder creator that will essentially be the base code for specialized folder and file creators in the future
 
 Questions this will ask:
-Please copy and paste the directory in which you would like to create folders and files, then press enter.
+Please copy and paste the directory in which you would like to create folders and files, then press Enter. If the command prompt is already on the correct root directory press Enter.
 
-What is the name of a folder you would like to create?
+In ______ root directory, add folder...
 
-Type the name of another folder you'd like to or type "n", "no", "stop", "done", or "d" to stop folder create.
+In ______ root directory, add file...
 
+In ______ folder, add sub-folder...
+
+In ______ sub-folder, add file...
+
+In ______ sub-folder, add sub-folder...
+
+In ______ sub-sub-folder, add folder...
+
+In ______ sub-sub-folder, add file...
+
+In ______ sub-x3-folder, add folder...
+
+In ______ sub-x3-folder, add file...
+
+And so on...
+
+I think I should add files first to subfolder than to just keep creating subfolders. Create the files, then create the hole to jump to next.
+
+But then it gets recursive where I'll want to store in the next folder. I'm going depth first instead of breadth first.
+
+Gonna need some while loops
+
+For recursion I'll need to keep the end in mind...
+
+Depth is recursive while breadth will be iterative.
+I guess I'll be doing it iteratively...
+
+The best way to solve this is recursively.
+I'll need to review my recursion.
+Doing thi
