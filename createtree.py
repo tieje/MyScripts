@@ -1,19 +1,21 @@
 import os
 
 class Solution:
-    groot = "Please copy and paste the directory in which you would like to create folders and files, then press Enter. If the command prompt is already on the correct root directory press Enter."
-    prompt = ">"
+    def __init__(self,root,groot, prompt):
+        self.root = root
+        self.groot = "Please copy and paste the directory in which you would like to create folders and files, then press Enter. If the command prompt is already on the correct root directory press Enter."
+        self.prompt = ">"
     def introduction():
-        print(groot)
-        roots = input(prompt)
-        if roots =='':
-            roots = os.getcwd()
-        org_creator(roots)
+        print(self.groot)
+        self.root = input(self.prompt)
+        if self.root =='':
+            self.root = os.getcwd()
+        org_creator(self.root)
     def org_creator(directory,createfile):
         list_files(directory)
         file_creator(directory, createfile)        
         print(message_gen(directory,'d'))
-        new_folder = input(prompt)
+        new_folder = input(self.prompt)
         down_the_rabbit_hole(directory,new_folder)
         Print('Organization Completed.')
     # helper functions
@@ -38,7 +40,7 @@ class Solution:
         up_the_rabbit_hole(old_hole)
 
     def up_the_rabbit_hole(geyser):
-        while geyser != roots
+        while geyser != self.root
             new_geyser = os.chdir('..')
             org_creator(new_geyser, 'n')
         pass
@@ -47,7 +49,7 @@ class Solution:
         if action == 'y':
             create_files = []
             print(gen_message(file_path,'f'))
-            new_file = input(prompt)
+            new_file = input(self.prompt)
             while new_file != '':
                 create_files.append(new_file)
             for file in create_files:
