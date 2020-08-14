@@ -62,7 +62,9 @@ os.remove("my_file_path") — remove a file — rm
 shutil.rmtree("my_directory_path")— remove a directory and all files and directories in it —rm -rf
 
 
+8/13/2020
 
+os.sep is the character used by the operating system to separate pathname components
 
 
 
