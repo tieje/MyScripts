@@ -66,7 +66,7 @@ shutil.rmtree("my_directory_path")— remove a directory and all files and direc
 
 os.sep is the character used by the operating system to separate pathname components
 
-
+A project took way too long because I lacked algorithm skills. I'm going to work on my algorithm skills for instead.
 
 https://realpython.com/python-pathlib/
 
