@@ -96,7 +96,7 @@ Began 8/12/2020
 
 Title: createcase
 Small Project: Create a script that creates case folders for clients
-Status: On hold until createtree is completed
+Status: Currently working on
 
 Ended
 -----------------------------------------------------
@@ -106,9 +106,9 @@ Began 8/12/2020
 
 Title: createtree
 Small Project: Create a script that creates a tree of folder and items
-Status: Currently working on
+Status: Finished
 
-Ended
+Ended 8/14/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
