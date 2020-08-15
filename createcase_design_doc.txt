@@ -29,3 +29,41 @@ The script createcase.py will make folders specifically for cases, but I guess I
 
 So I'll create createtree command first, then I'll create the createcase command.
 
+8/15/2020
+
+The createtree.py command is finished. I will now create this specialized script.
+
+Input: case number, client (three letter word), option argument of description
+
+Output: Three folders in the Cases folder on my work computer path
+
+Client folder
+    Case Number - Case Description
+        Code
+        	- I usually use a [case_number]_scratch.sql file for my personal use
+        Deployment
+        Documentation
+        	- For my level of work, I use a CDD. I might want to copy the CDD to this with the appropriate file name.
+
+Analysis:
+
+Cases folder # Will use a folder parameter at the top
+    Client folder # will use Regex to choose best match based on input
+					# If I can't find a match, ask for another input
+						# If it can't find a match, a second time, the script will end.
+					# Confirmation message: "For ____ [pick with the most matches] ___ would you like to create a case? Type 'y','yes', or spacebar, and Enter.
+        Case Number - Case Description # "What is the case number?" If no case number, end the script.
+										# "Description? (optional)"
+            Code
+            	- I usually use a [case_number]_scratch.sql file for my personal use
+            Deployment
+            Documentation # Have a parameter at the top to copy the CDD from your template folder and rename the copy with case number.
+            	- For my level of work, I use a CDD. I might want to copy the CDD to this with the appropriate file name.
+
+As a nice visual touch:
+	either: give the folder path of this case and ask to copy and paste this in File Explorer,
+	Or: open up Windows File Explorer to this new location.
+
+The second mini project will be to extend this function by creating folders in SVN and check them out to this folder in SVN.
+This might be hard.
+

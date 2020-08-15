@@ -120,3 +120,12 @@ Status: Have not started
 Ended
 -----------------------------------------------------
 
+-----------------------------------------------------
+Began
+
+Title: Extend createcase functionality
+Summary: Create folder in SVN and check it out to this folder in SVN
+Status:
+
+Ended
+-----------------------------------------------------
