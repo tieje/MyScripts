@@ -42,6 +42,7 @@ def up_the_rabbit_hole():
     org_creator(geyser, 'stop')
 def file_creator(file_path, action):
     if action == 'y':
+        os.chdir(file_path)
         list_files(file_path)
         print(message_gen(file_path,'f'))
         new_file = input(prompt)
