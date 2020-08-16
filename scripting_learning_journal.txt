@@ -74,6 +74,11 @@ Got a lot more comfortable with using self. I think I finally understand it.
 My next project will be creating a script for creating scripts.
 I do not have the permission to copy files from the command line for my work computer, even with my administrative privileges.
 
+8/16/2020
+
+Create script was successful. I made this one in much less time.
+The next script will be the logchecker for sql scripts. This should be pretty easy to write.
+I'll call it the mhklogchecker since I might need to write more logcheckers not related to my current company in the future.
 
 
 https://realpython.com/python-pathlib/
@@ -124,17 +129,17 @@ Began 8/15/2020
 
 Title: createscript
 Summary: Create script that automatically creates the three files that I want to be made for each script.
-Status: Will start next
+Status: Finished
 
-Ended 
+Ended 8/16/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
 Began
 
-Title: logchecker
+Title: mhklogchecker
 Summary: Create a script that checks log files for errors for sql scripts ran in sqlplus
-Status: Have not started
+Status: Next Script
 
 Ended
 -----------------------------------------------------
