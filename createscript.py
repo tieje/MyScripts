@@ -36,7 +36,7 @@ class CreateScript():
                 open(name_nospace + '_readme.txt','w')
                 os.chdir(self.path)
             class_name = name.title()
-            py_name = name + '.py'
+            py_name = name_nospace + '.py'
             new_file = open(py_name, 'w')
             new_file.write('import os' + '\n\nclass ' + class_name.replace(' ','') + ':' + '\n\n' + r'if __name__ == "__main__":')
         except:
