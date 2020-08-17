@@ -84,6 +84,9 @@ I'll call it the mhklogchecker since I might need to write more logcheckers not 
 
 If I work through lunch, I'm pretty sure I could write a script for end of the year stuff to make it easier to copy and paste.
 
+I messed up, I could have concatenated strings in excel instead... I'm so sad...
+
+
 
 https://realpython.com/python-pathlib/
 
@@ -203,7 +206,7 @@ Began 8/17/2020
 
 Title: End of Year Scopus Copy and Paste
 Summary: A script that creates the End of Year Scopus copy and paste for each client from an excel sheet. It will populate the excell sheet fields.
-Status: Completed. I... regret nothing.
+Status: Completed. I... regret writing this script because I could have simply concatenated in excel to solve this problem.
 
 Ended 8/17/2020
 -----------------------------------------------------
