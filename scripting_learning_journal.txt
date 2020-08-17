@@ -80,6 +80,10 @@ Create script was successful. I made this one in much less time.
 The next script will be the logchecker for sql scripts. This should be pretty easy to write.
 I'll call it the mhklogchecker since I might need to write more logcheckers not related to my current company in the future.
 
+8/17/2020
+
+If I work through lunch, I'm pretty sure I could write a script for end of the year stuff to make it easier to copy and paste.
+
 
 https://realpython.com/python-pathlib/
 
@@ -147,6 +151,16 @@ Ended
 -----------------------------------------------------
 Began
 
+Title: Update Tracker
+Summary: Open and update the Tracker for any case
+Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
 Title: mhklogchecker
 Summary: Create a script that checks log files for errors for sql scripts ran in sqlplus
 Status: Next Script
@@ -179,8 +193,17 @@ Began
 
 Title: Raspberry pi supercluster
 Summary: Create a raspberry pi super cluster
-Status: 
+Status: Bought parts... like $200 geez
 
 Ended
 -----------------------------------------------------
 
+-----------------------------------------------------
+Began 8/17/2020
+
+Title: End of Year Scopus Copy and Paste
+Summary: A script that creates the End of Year Scopus copy and paste for each client from an excel sheet. It will populate the excell sheet fields.
+Status: Completed. I... regret nothing.
+
+Ended 8/17/2020
+-----------------------------------------------------
