@@ -45,7 +45,10 @@ class CreateCase:
             return None
         print('What is the case description? This is optional.')
         description = input(prompt)
-        new_folder = case_number + ' - ' + description
+        if description == '\n' or description == '' or description == None:
+            new_folder = case_number
+        else:
+            new_folder = case_number + ' - ' + description
         # Case folder creation
         os.mkdir(new_folder)
         case_folder = os.path.join(working_dir,new_folder)
