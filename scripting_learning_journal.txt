@@ -137,11 +137,21 @@ Ended 8/16/2020
 -----------------------------------------------------
 Began
 
+Title: My Scripts
+Summary: A shortcut in the command line that will change directory to MyScripts folder
+Status: Do this before all else
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
 Title: mhklogchecker
 Summary: Create a script that checks log files for errors for sql scripts ran in sqlplus
 Status: Next Script
 
-Ended
+Ended 
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -150,6 +160,26 @@ Began
 Title: Extend createcase functionality
 Summary: Create folder in SVN and check it out to this folder in SVN
 Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: mhk run scripts
+Summary: Automatically run scripts in sqlplus and check log files
+Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: Raspberry pi supercluster
+Summary: Create a raspberry pi super cluster
+Status: 
 
 Ended
 -----------------------------------------------------
