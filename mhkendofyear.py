@@ -3,7 +3,7 @@ import xlwings as xw
 # strings range from I to P
 class MhkEndOfYear:
 
-    def __init__(self, brm_emails, brms, clients, eoy, current_sit, see_attached, acceptance, issues, price, final_res):
+    def __init__(self, brm_emails, brms, clients, eoy, current_sit, see_attached, acceptance, issues, price, final_res, client_resp):
         self.brm_emails = brm_emails
         self.brms = brms
         self.clients = clients
@@ -14,6 +14,7 @@ class MhkEndOfYear:
         self.issues = issues
         self.price = price
         self.final_res = final_res
+        self.client_resp = client_resp
 
     # helper functions
     def number_of_clients(self,sht):
@@ -105,7 +106,7 @@ class MhkEndOfYear:
                 elif x == acceptance:
                     wb.range(x+i).value = self.acceptance
                 elif x == client_res:
-                    wb.range(x+i).value = self.see_attached.format(self.eoy)
+                    wb.range(x+i).value = self.client_resp
                 elif x == issues:
                     wb.range(x+i).value = self.issues.format(self.eoy, bm)
                 elif x == price:
@@ -171,12 +172,13 @@ if __name__ == "__main__":
     }
     current_sit = "{} ({}) uses MarketProminence (MP) to manage their Medicare members. To continue compliance into the new year ('{}'), there are multiple data points outlined in the Proposed Solution section of this scope that need to be updated to allow MP to continue processing member transactions properly."
     see_attached = "See attached pdf—'MarketProminence Year-end {}'."
-    acceptance = "Please verify that all deliverables in the attached file are implemented in test and after internal testing is completed, promoted to production. The client is responsible for the items listed under client responsibilities in the attached document. Send email to BRM when items are successfully implemented to production."
+    acceptance = "Please verify that all deliverables in the attached file are implemented in test and after internal testing is completed, promoted to production."
     issues = "Any variances determined after loading the January 1st {} MMR file will be investigated once the client initiates a new request {}."
     price = "MHK/MarketProminence estimates {times} hours to complete this project. {times} hours will be deducted from the prepaid amount. Any hours over the monthly hours will first be deducted from the current years remaining rollover hours. Hours in excess of the monthly and carryover will be billed at the contracted postpaid rate."
     final_res = "Please email a signed copy of this scope to {}. Any changes made to this scope will require a new revision and appropriate approvals."
+    client_resp = "The client is responsible for the items listed under client responsibilities in the attached document. Send email to BRM when items are successfully implemented to production."
     wb = xw.sheets[0]
-    MhkEndOfYear(brm_emails, brms, clients, eoy, current_sit, see_attached, acceptance, issues, price, final_res).fill_strings()
+    MhkEndOfYear(brm_emails, brms, clients, eoy, current_sit, see_attached, acceptance, issues, price, final_res, client_resp).fill_strings()
 """
 class test:
     def __init__(self, stuff):

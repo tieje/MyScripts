@@ -196,6 +196,16 @@ Ended
 -----------------------------------------------------
 Began
 
+Title: Create a script for creating EOY folders in SVN
+Summary: Create folders in SVN for end of year
+Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
 Title: mhk run scripts
 Summary: Automatically run scripts in sqlplus and check log files
 Status: Have not started
