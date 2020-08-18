@@ -86,6 +86,8 @@ If I work through lunch, I'm pretty sure I could write a script for end of the y
 
 I messed up, I could have concatenated strings in excel instead... I'm so sad...
 
+My Scripts was finished, but I can't actually change the directory of my command line without typing or pasting it in, so... I think this is the best I can do...
+
 
 
 https://realpython.com/python-pathlib/
@@ -142,23 +144,23 @@ Ended 8/16/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
-Began
+Began 8/17/2020
+
+Title: End of Year Scopus Copy and Paste
+Summary: A script that creates the End of Year Scopus copy and paste for each client from an excel sheet. It will populate the excell sheet fields.
+Status: Completed. I... regret writing this script because I could have simply concatenated in excel to solve this problem.
+
+Ended 8/17/2020
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began 8/17/2020
 
 Title: My Scripts
 Summary: A shortcut in the command line that will change directory to MyScripts folder
-Status: Do this before all else
+Status: Completed
 
-Ended
------------------------------------------------------
-
------------------------------------------------------
-Began
-
-Title: Update Tracker
-Summary: Open and update the Tracker for any case
-Status: Have not started
-
-Ended
+Ended 8/17/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -169,6 +171,16 @@ Summary: Create a script that checks log files for errors for sql scripts ran in
 Status: Next Script
 
 Ended 
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: Update Tracker
+Summary: Open and update the Tracker for any case
+Status: Have not started
+
+Ended
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -201,12 +213,3 @@ Status: Bought parts... like $200 geez
 Ended
 -----------------------------------------------------
 
------------------------------------------------------
-Began 8/17/2020
-
-Title: End of Year Scopus Copy and Paste
-Summary: A script that creates the End of Year Scopus copy and paste for each client from an excel sheet. It will populate the excell sheet fields.
-Status: Completed. I... regret writing this script because I could have simply concatenated in excel to solve this problem.
-
-Ended 8/17/2020
------------------------------------------------------
