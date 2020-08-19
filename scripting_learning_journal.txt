@@ -164,17 +164,17 @@ Ended 8/17/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
-Began
+Began 8/18/2020
 
 Title: mhklogchecker
 Summary: Create a script that checks log files for errors for sql scripts ran in sqlplus
-Status: Next Script
+Status: Completed
 
-Ended 
+Ended 8/19/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
-Began
+Began 
 
 Title: Update Tracker
 Summary: Open and update the Tracker for any case
