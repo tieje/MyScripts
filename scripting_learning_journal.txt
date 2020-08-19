@@ -223,3 +223,23 @@ Status: Bought parts... like $200 geez
 Ended
 -----------------------------------------------------
 
+-----------------------------------------------------
+Began 
+
+Title: Learn Rust
+Summary: Learn Rust to see what the hype is about
+Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: Learn Rsync and Cloud storage
+Summary: Create a cloud storage and data backup solution so that you can be OS agnostic and not need to worry about starting from scratch from a new machine.
+Status:
+
+Ended
+-----------------------------------------------------
+
