@@ -204,13 +204,13 @@ Ended
 -----------------------------------------------------
 
 -----------------------------------------------------
-Began
+Began 8/19/2020
 
 Title: mhk run scripts
 Summary: Automatically run scripts in sqlplus and check log files
 Status: I actually don't think this is possible. Or it is... it might be worth more trouble than it's worth.
 
-Ended
+Ended 
 -----------------------------------------------------
 
 -----------------------------------------------------
