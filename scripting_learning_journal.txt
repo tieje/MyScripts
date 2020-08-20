@@ -88,6 +88,14 @@ I messed up, I could have concatenated strings in excel instead... I'm so sad...
 
 My Scripts was finished, but I can't actually change the directory of my command line without typing or pasting it in, so... I think this is the best I can do...
 
+8/19/2020
+
+Rather than running the script from python, I might just copy from the zz_driver and run that instead. The sqlplus python thing isn't working. The sqlplus_commando package is unfinished, therefore I need to determine a different method.
+From these links it's possible to run scripts in a command line interface, but I'll need to learn Popen, PIPE, and possibly other things as well like sys. I think that this will be worth the investment. For now, I'll call it a night because I'm tired. I need to go to sleep early.
+
+https://o-dba.blogspot.com/2017/03/python-for-oracle-using-sqlplus.html
+https://docs.python.org/3/library/subprocess.html
+
 
 
 https://realpython.com/python-pathlib/
@@ -174,6 +182,16 @@ Ended 8/19/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
+Began 8/19/2020
+
+Title: mhk run scripts
+Summary: Automatically run scripts in sqlplus and check log files
+Status: Working on. This script might actually take a week to write just so I can understand new python packages.
+
+Ended 
+-----------------------------------------------------
+
+-----------------------------------------------------
 Began
 
 Title: Extend createcase functionality
@@ -201,16 +219,6 @@ Summary: Create folders in SVN for end of year
 Status: Have not started
 
 Ended
------------------------------------------------------
-
------------------------------------------------------
-Began 8/19/2020
-
-Title: mhk run scripts
-Summary: Automatically run scripts in sqlplus and check log files
-Status: I actually don't think this is possible. Or it is... it might be worth more trouble than it's worth.
-
-Ended 
 -----------------------------------------------------
 
 -----------------------------------------------------

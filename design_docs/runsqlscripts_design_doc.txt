@@ -1,0 +1,22 @@
+8/19/2020
+
+Input needed in order:
+1. Location of scripts to run.
+	Press Enter if the command line is already in the correct directory.
+	- If a "zz_drive_[0-9] file exists in the folder, then only run this instead.
+2. Check for a spool for each script. If there is no spool in the first line, then run the spool command before running the script.
+3. Run the script.
+	Next run the mhklogchecker
+	If there is an error, print the error_results.txt file
+	    If it's a zz_drive_[0-9] file, then it won't paste
+4. If there is a "grant to" prompt, input sc_base
+5. Run the mhklogchecker.
+
+
+Found hostname from the following query:
+select host_name from v$instance
+
+I won't be using sqlplus_commando python package because it's unfinished.
+I'll look in to Popen, PIPE, and sys for python instead.
+It will be a bit more learning, but I think it will be rewarding.
+
