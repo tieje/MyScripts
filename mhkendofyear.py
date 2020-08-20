@@ -173,7 +173,7 @@ if __name__ == "__main__":
     current_sit = "{} ({}) uses MarketProminence (MP) to manage their Medicare members. To continue compliance into the new year ('{}'), there are multiple data points outlined in the Proposed Solution section of this scope that need to be updated to allow MP to continue processing member transactions properly."
     see_attached = "See attached pdf—'MarketProminence Year-end {}'."
     acceptance = "Please verify that all deliverables in the attached file are implemented in test and after internal testing is completed, promoted to production."
-    issues = "Any variances determined after loading the January 1st {} MMR file will be investigated once the client initiates a new request {}."
+    issues = "Any variances determined after loading the January 1st {} MMR file will be investigated once the client initiates a new request to {}."
     price = "MHK/MarketProminence estimates {times} hours to complete this project. {times} hours will be deducted from the prepaid amount. Any hours over the monthly hours will first be deducted from the current years remaining rollover hours. Hours in excess of the monthly and carryover will be billed at the contracted postpaid rate."
     final_res = "Please email a signed copy of this scope to {}. Any changes made to this scope will require a new revision and appropriate approvals."
     client_resp = "The client is responsible for the items listed under client responsibilities in the attached document. Send email to BRM when items are successfully implemented to production."
