@@ -194,6 +194,26 @@ Ended
 -----------------------------------------------------
 Began
 
+Title: Outline Deployment
+Summary: Make a script that creates the folder path for new deployments
+Status:
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: mhk test script
+Summary: Tests script in sqlplus and reviews logs for errors automatically
+Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
 Title: Extend createcase functionality
 Summary: Create folder in SVN and check it out to this folder in SVN
 Status: Have not started
@@ -251,3 +271,42 @@ Status:
 Ended
 -----------------------------------------------------
 
+-----------------------------------------------------
+Began
+
+Title: mhk defect form scraper
+Summary: scrapes the data from a word document and puts it into a Jira bug form. If I can import an excel sheet, I probably should.
+Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: git push
+Summary: Write a script that performs a basic git command for pushing code out to git
+Status: Have not started
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: script idea
+Summary: Write a script that writes new scripting ideas to your script_learning_journal.txt file.
+Status:
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title:
+Summary: Write a script that takes writes new scripting ideas to your script_learning_journal.txt file.
+Status:
+
+Ended
+-----------------------------------------------------
