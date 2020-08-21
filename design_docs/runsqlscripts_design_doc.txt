@@ -20,3 +20,32 @@ I won't be using sqlplus_commando python package because it's unfinished.
 I'll look in to Popen, PIPE, and sys for python instead.
 It will be a bit more learning, but I think it will be rewarding.
 
+https://docs.python.org/3.7/library/subprocess.html#subprocess.Popen.communicate
+
+internal Popen object is automatically created with stdout=PIPE and stderr=PIPE
+
+subprocess.PIPE
+Special value that can be used as the stdin, stdout or stderr argument to Popen and indicates that a pipe to the standard stream should be opened. Most useful with Popen.communicate().
+
+output
+Output of the child process if it was captured by run() or check_output(). Otherwise, None.
+
+stdout¶
+Alias for output, for symmetry with stderr.
+
+https://stackoverflow.com/questions/7681715/whats-the-difference-between-subprocess-popen-and-call-how-can-i-use-them
+
+I think I finally understand what I want to do.
+
+
+#0. Read the top line of the sql file to make sure that the file contains a spool option. If not, then include spool at the beginning and end your commands.
+#1. I'm going to to want to use Popen() to open sqlplus.
+	# I'll Popen() because I will not be waiting for the sqlplus command to finish in the window's cmd prompt
+#2. I'll need to interpret stout=PIPE so I can determine if I'll need to grant permission to sc_base or not. Also I need to check if an error occurs.
+#3. I need to run the script.
+#4. I'll run the mhklogchecker immediately afterwards.
+
+
+This doesn't work, but it's a good reference.
+https://o-dba.blogspot.com/2017/03/python-for-oracle-using-sqlplus.html
+

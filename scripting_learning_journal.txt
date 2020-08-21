@@ -5,10 +5,11 @@ I do understand that I'll need to use powershell sometimes because some things c
 
 I want to learn how to script because I like automating work given to me. The faster I can automate tasks, the more time I'll have to devote to other projects.
 
+https://realpython.com/python-pathlib/
+https://pbpython.com/pathlib-intro.html
+https://docs.python.org/3.7/library/filesys.html
 
 https://docs.microsoft.com/en-us/windows/python/scripting
-
-
 
 Create new folders in powershell
 mkdir
@@ -96,17 +97,45 @@ From these links it's possible to run scripts in a command line interface, but I
 https://o-dba.blogspot.com/2017/03/python-for-oracle-using-sqlplus.html
 https://docs.python.org/3/library/subprocess.html
 
+8/20/2020
+
+This was very useful:
+https://sharats.me/posts/the-ever-useful-and-neat-subprocess-module/
+
+Popen(['cmd', '/K', 'command'])
+/K means keep the command window from closing.
+
+This one is pretty cut and dry. No warnings about using shell=True
+https://pymotw.com/2/subprocess/
+
+subprocess.call() is an older high-level API
+I should be using subprocess.run() instead.
+
+The Popen interface is usually reserved for more advanced use cases.
+
+The difference between subprocess.Popen and subprocess.run()
+
+https://stackoverflow.com/questions/7681715/whats-the-difference-between-subprocess-popen-and-call-how-can-i-use-them
+
+subprocess.Popen is more general than subprocess.run.
+
+Popen doesn't block, allowing you to interact with the process while it's running, or continue with other things in your Python program. The call to Popen returns a Popen object.
+
+call does block. While it supports all the same arguments as the Popen constructor, so you can still set the process' output, environmental variables, etc., your script waits for the program to complete, and call returns a code representing the process' exit status.
+
+run() is just a convenience function that waits until the script is finished. It's actually a thin wrapper around Popen.
+
+Before I get started, I'd like to read the following and understand it, particularly Part 6:
+
+https://lyceum-allotments.github.io/2017/03/python-and-pipes-part-5-subprocesses-and-pipes/
+https://lyceum-allotments.github.io/2017/03/python-and-pipes-part-6-multiple-subprocesses-and-pipes/
+
+I actually don't need to understand Part 6. Part 6 is complicated. Part 5 is fine.
+
+This is what I'm currently looking into:
+https://queirozf.com/entries/python-3-subprocess-examples#popen-example-store-the-output-and-error-messages-in-a-string
 
 
-https://realpython.com/python-pathlib/
-
-
-
-https://pbpython.com/pathlib-intro.html
-
-
-
-https://docs.python.org/3.7/library/filesys.html
 
 Projects
 
