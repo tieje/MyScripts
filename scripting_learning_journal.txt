@@ -135,6 +135,10 @@ I actually don't need to understand Part 6. Part 6 is complicated. Part 5 is fin
 This is what I'm currently looking into:
 https://queirozf.com/entries/python-3-subprocess-examples#popen-example-store-the-output-and-error-messages-in-a-string
 
+8/23/2020
+
+stdout=PIPE means that the variable will be carried over to the next instance
+
 
 
 Projects

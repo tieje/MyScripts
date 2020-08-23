@@ -49,3 +49,22 @@ I think I finally understand what I want to do.
 This doesn't work, but it's a good reference.
 https://o-dba.blogspot.com/2017/03/python-for-oracle-using-sqlplus.html
 
+8/23/2020
+
+From testing, I've determined that the best way to solve running scripts is to create a zz_drive of my own.
+
+Input: location of scripts to run, name of the database to run them in
+sanitizing: database name must exist in a list derived from tnsnames file
+Output:
+#1. zz_drive.sql file will be created and ran.
+	The script will go over each sql script in the folder.
+		The user will be prompted to write the full name of the sequence of scripts. (must type "first", "second")
+		The user input will written to prompt at the end of the questions.
+	The script will print the contents of the new txt file asking for confirmation. "Is this correct? If it is then enter 'yes'"
+#2. When a sql script is run, it will be moved to folder called scripts ran at [current date]
+#3. The mhklogchecker will be run on that log to check for errors.
+	If any errors exist, you will be prompted to check the error_results.txt file for that specific sql script. The error_results.txt file will be prefixed to error_results.txt file.
+	If the errors are ok, then keep running the script, if they are not ok, then the script will no longer run.
+	If the script is stopped, the sql files will not be run because they are already in a different folder... Or at least that's how I hope it works.
+#4. When all the scripts were run, a final mhklogchecker will be called on the folder containing all the logs.
+
