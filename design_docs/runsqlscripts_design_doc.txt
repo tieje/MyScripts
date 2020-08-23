@@ -68,3 +68,11 @@ Output:
 	If the script is stopped, the sql files will not be run because they are already in a different folder... Or at least that's how I hope it works.
 #4. When all the scripts were run, a final mhklogchecker will be called on the folder containing all the logs.
 
+
+I can run scripts outside of the sqlplus terminal with host.
+Now I just need to know how to run scripts in python within the sqlplus terminal.
+I can start the sqlplus terminal with python and run the zz_driver. The zz_driver can run be written in such a way that it runs my python scripts outside the sqlplus terminal...
+
+I think I figured it out... Unfortunately, I figured it out from a workaround instead of using Popen to work for me.
+The thing that I needed to figure out was how to run a double fork subprocess. Getting past one fork is difficult. I guess two forks might be too much.
+
