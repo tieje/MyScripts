@@ -100,7 +100,7 @@ def db_look_up(tnspath, dbname):
     os.chdir(tnspath)
     tns = open('tnsnames.ora', 'r')
     for i in tns.readlines():
-        if dbname in i[:25].lower():
+        if dbname.lower() in i[:25].lower():
             return True
     return False
 if __name__ == "__main__":

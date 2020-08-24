@@ -144,6 +144,7 @@ stdout=PIPE means that the variable will be carried over to the next instance
 
 I finished the sql script runner... but at a great cost...
 
+Of course the first time I use the actual scripts for practical use, the script-writer decides to spool to a txt file instead of a log file. I might need to make an update for this.
 
 
 
@@ -229,6 +230,16 @@ Summary: Automatically run scripts in sqlplus and check log files
 Status: Working on. This script might actually take a week to write just so I can understand new python packages.
 
 Ended 8/24/2020
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title:
+Summary: Create script that creates a py_installer for shareable use
+Status:
+
+Ended
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -345,7 +356,37 @@ Ended
 Began
 
 Title:
-Summary: Write a script that takes writes new scripting ideas to your script_learning_journal.txt file.
+Summary: Write a script that writes new scripting ideas to your script_learning_journal.txt file.
+Status:
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title:
+Summary: Wrap your scripts in a virtual environment to make it easier to share scripts (Maybe. Usually, if I'm going to share scripts, it's only very specific scripts.)
+Status:
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title:
+Summary: Update createcase.py to reflect what you have learned
+Status:
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title:
+Summary:
 Status:
 
 Ended
