@@ -9,7 +9,6 @@ class MhkLogChecker:
     def check_logs(self):
         total_errors = 0
         errors = open('error_results.txt','w')
-        os.chdir(self.path)
         dir_list = os.listdir()
         logs_list = self.only_logs(dir_list)
         errors.write(datetime.now().strftime("%d/%m/%Y %H:%M"+'\n'))
@@ -29,9 +28,12 @@ class MhkLogChecker:
         print(str(total_errors) + ' errors present.')
         if total_errors == 0:
             print("No errors, you're all set!")
+            errors.close()
+            return True
         print("Paste and Enter to check error results.")
         pyperclip.copy(os.path.join(self.path,'error_results.txt'))
-        return None
+        errors.close()
+        return False
 
     # helper functions
     def only_logs(self, raw_list):
@@ -57,4 +59,5 @@ if __name__ == "__main__":
     path = input(prompt)
     if bool(path) == False:
         path = os.getcwd()
+    os.chdir(path)
     MhkLogChecker(path,keywords).check_logs()

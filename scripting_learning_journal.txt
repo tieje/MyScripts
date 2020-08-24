@@ -140,6 +140,13 @@ https://queirozf.com/entries/python-3-subprocess-examples#popen-example-store-th
 stdout=PIPE means that the variable will be carried over to the next instance
 
 
+8/24/2020
+
+I finished the sql script runner... but at a great cost...
+
+
+
+
 
 Projects
 
@@ -221,7 +228,7 @@ Title: mhk run scripts
 Summary: Automatically run scripts in sqlplus and check log files
 Status: Working on. This script might actually take a week to write just so I can understand new python packages.
 
-Ended 
+Ended 8/24/2020
 -----------------------------------------------------
 
 -----------------------------------------------------

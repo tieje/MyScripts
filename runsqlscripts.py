@@ -1,73 +1,126 @@
 import os
 import subprocess
-
-
+import shutil
 
 class RunSqlScripts:
     # create the zz_drive.sql file based on existing examples
     def __init__(self, working_directory, db_name):
-    	self.working_directory = working_directory
-    	self.db_name = db_name
-    def create_driver(self)
-        sqlfiles_order = []
+        self.working_directory = working_directory
+        self.db_name = db_name
+    def create_driver(self):
+        driver_name = "custom_driver.sql"
         os.chdir(self.working_directory)
-        driver = open('custom_driver.sql','w')
-        sqlfiles = self.only_x(os.listdir(), ".sql")
-        final_sql_order = self.sort_files(sqlfiles)
-        print("Driver is ")
+        sqlfiles = []
+        for i in os.listdir():
+            if i != driver_name:
+                sqlfiles.append(i)
+        unordered_numbers = self.only_x(sqlfiles, ".sql")
+        final_sql_order = self.sort_files(unordered_numbers)
+        ordered_spools = self.check_spool(unordered_numbers, final_sql_order)
+        self.driver = open(driver_name,'w')     
+        final_string = self.write_string(ordered_spools)
+
+        print("Driver has been created.")
+        try:
+            shutil.move(log_checker2, self.working_directory)
+        except:
+            print("Log checkers have already been moved.")
+        try:
+            os.mkdir('logs')
+            os.mkdir('scripts_ran')
+            os.mkdir(r"logs\no_error_logs")
+        except:
+            print("Folders have already been created.")
+            pass
+        self.driver.close()
+        subprocess.run("sqlplus sc_base/superman@"+self.db_name+" @"+os.path.join(self.working_directory,driver_name), shell=True)
+        return True
     # helper functions
-    def sort_files(file_list):
-    	ordered_files = []
+    def write_string(self, sql_input):
+        script_list = []
+        log_checker_sqlplus_command = "host runsqlscriptslogchecker.py"
+        ending2 = "host move "+os.path.join(self.working_directory, "runsqlscriptslogchecker.py")+" "+return_loc
+        for i in sql_input:
+            i_string = str(i[0])
+            if i[2] == 'nospool':
+                self.driver.write("\nspool " + i_string[:-4] + ".log;\n@" + os.path.join(self.working_directory, i_string) + ";\nspool off;")
+            else:
+                self.driver.write("\n@" + os.path.join(self.working_directory,i_string))
+            self.driver.write("\n" + log_checker_sqlplus_command + " " + i_string + "\n\n")
+        self.driver.write("\n"+"\n"+ending2)
+        return self.driver
+
+        # script list needs custom commands to run a short custom log checker
+
+
+    def check_spool(self,spool_list, order_of_files):
+        spool_exists = []
+        for i in spool_list:
+            file = open(i,'r')
+            if 'spool' in file.readlines()[0].lower():
+                spool_exists.append('spool')
+            else:
+                spool_exists.append('nospool')
+        spool_checked = zip(spool_list, order_of_files, spool_exists)
+        final_order = sorted(spool_checked, key=lambda files1: files1[1])
+        return final_order
+
+    def sort_files(self,file_list):
+        ordered_files = []
+        order_of_files = []
         for i in file_list:
-        	print("What is the order of " + i + " ? Please Enter the integer number of order.")
-        	order = input(prompt)
-        	sqlfiles_order.append(tuple(i, order))
+            print("What is the order of " + i + " ? Please Enter the integer number of order.")
+            order = input(prompt)
+            ordered_files.append((i,order))
+            order_of_files.append(order)
         # order sql files
-        final_sql_order = sorted(sqlfiles_order, key=lambda sqlfile: sqlfile[1])
+        final_sql_order = sorted(ordered_files, key=lambda sqlfile: sqlfile[1])
         for x in final_sql_order:
-        	print(x)
+            print(x)
         self.response = 'response'
         affirmative_resps = ('yes','y','ye','yse')
         while self.response not in affirmative_resps:
-        	print("Is this the correct order? Type 'yes' if the order is correct.")
+            print("Is this the correct order? Type 'yes' if the order is correct.")
             self.response = input(prompt)
             if self.response in affirmative_resps:
-            	break
+                break
             else:
-            	self.sort_files(file_list)
-        return ordered_files
+                self.sort_files(file_list)
+        return order_of_files
 
     def only_x(self, raw_list, file_type):
-    	files = []
-    	for i in raw_list:
-    		if i[-4:] == file_type:
-    			files.append()
-    		else:
-    			pass
-    	return files
+        files = []
+        for i in raw_list:
+            if i[-4:] == file_type:
+                files.append(i)
+            else:
+                pass
+        return files
 def db_look_up(tnspath, dbname):
-	os.chdir(tnspath)
-	tns = open('tnsnames.ora', 'r')
-	for i in tns.readlines():
-		if dbname in i[:25]:
-			return True
-	return False
+    os.chdir(tnspath)
+    tns = open('tnsnames.ora', 'r')
+    for i in tns.readlines():
+        if dbname in i[:25].lower():
+            return True
+    return False
 if __name__ == "__main__":
-	tnsnamesora_path = r"C:\oracle\product\12.1.0\client_1\network\admin"
-	prompt = '>'
-	message1 = "Enter the path the sql scripts, OR press enter if the cmd prompt is on the correct working directory."
-	message2 = "Enter the database name."
-	message3 = "Please enter a valid database name or press Ctrl + C to exit."
-	print(message1)
-	working_directory = input(prompt)
-	if bool(working_directory):
-		working_directory = os.getcwd()
-	print(message2)
-	db_name = input(prompt)
-	db_results = db_look_up(tnsnamesora_path, db_name)
-	while db_results==False:
-		print(message3)
-		db_name = input(prompt)
-	    db_results = db_look_up(tnsnamesora_path, db_name)
-	os.chdir(working_directory)
-	RunSqlScripts(working_directory, db_name).create_driver()
+    log_checker2 = r"C:\CustomOfficeTemplates\current_code\MyScripts\runsqlscriptslogchecker.py"
+    return_loc = r"C:\CustomOfficeTemplates\current_code\MyScripts"
+    tnsnamesora_path = r"C:\oracle\product\12.1.0\client_1\network\admin"
+    prompt = '>'
+    message1 = "Enter the path the sql scripts, OR press enter if the cmd prompt is on the correct working directory."
+    message2 = "Enter the database name."
+    message3 = "Please enter a valid database name or press Ctrl + C to exit."
+    print(message1)
+    working_directory = input(prompt)
+    if bool(working_directory) == False:
+        working_directory = os.getcwd()
+    print(message2)
+    db_name = input(prompt)
+    db_results = db_look_up(tnsnamesora_path, db_name)
+    while db_results==False:
+        print(message3)
+        db_name = input(prompt)
+        db_results = db_look_up(tnsnamesora_path, db_name)
+    os.chdir(working_directory)
+    RunSqlScripts(working_directory, db_name).create_driver()
