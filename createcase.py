@@ -2,6 +2,7 @@ import os
 # import shutil
 import re
 from createtree import Solution
+import pyperclip
 
 
 class CreateCase:
@@ -12,8 +13,9 @@ class CreateCase:
         self.prompt = prompt
         self.path = path
     def dir_matcher(self,folder):
-        print(self.list_directories)
-        print("Which folder would you like to make a new case? Enter 'new' or 'n' if it's a new folder.")
+        for d in self.list_directories:
+            print(d)
+        print("Which folder would you like to make a new case (match folder name exactly)? Enter 'new' or 'n' if it's a new folder.")
         response = input(prompt)
         if response == 'new' or response == 'n':
             os.chdir(self.absolute_path)
@@ -62,8 +64,10 @@ class CreateCase:
         # shutil.copy2(self.cdd_path, os.path.join(case_folder, 'Documentation'))
         self.path = case_folder
         Solution.list_files(self)
-        print('Copy and paste the following path into File Explorer')
+        print('The following path has been copied to clipboard. Paste the path.')
         print(case_folder)
+        pyperclip.copy(case_folder)
+        return True
 
 if __name__ == "__main__":
     absolute_path = r'C:\Users\tfrancis\OneDrive - Hearst\Cases'

@@ -150,6 +150,13 @@ The script came in clutch today. Saved me a lot of brainpower and time.
 
 I would like to share this script with Apoorva.
 
+I shared my github with Apoorva.
+
+It seems like I'll be entering the SVN portion of my script projects. This should be interesting.
+I'll be extending functionality of createcase.py to also create the correct folders in SVN and perform recursive commits.
+This will take a while to learn how to navigate SVN.
+
+
 
 
 Projects
@@ -230,39 +237,19 @@ Began 8/19/2020
 
 Title: mhk run scripts
 Summary: Automatically run scripts in sqlplus and check log files
-Status: Working on. This script might actually take a week to write just so I can understand new python packages.
+Status: Completed
 
 Ended 8/24/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
-Began 
+Began 8/24/2020
 
-Title:
-Summary: Create script that creates a py_installer for shareable use
-Status:
-
-Ended
------------------------------------------------------
-
------------------------------------------------------
-Began
-
-Title: Outline Deployment
+Title: sql script Deployment
 Summary: Make a script that creates the folder path for new deployments
-Status:
+Status: Completed
 
-Ended
------------------------------------------------------
-
------------------------------------------------------
-Began
-
-Title: mhk test script
-Summary: Tests script in sqlplus and reviews logs for errors automatically
-Status: Have not started
-
-Ended
+Ended 8/24/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -270,7 +257,7 @@ Began
 
 Title: Extend createcase functionality
 Summary: Create folder in SVN and check it out to this folder in SVN
-Status: Have not started
+Status: Will do next
 
 Ended
 -----------------------------------------------------
@@ -386,11 +373,31 @@ Ended
 -----------------------------------------------------
 
 -----------------------------------------------------
+Began 
+
+Title:
+Summary: Create script that creates a py_installer for shareable use
+Status: I don't think I'll do this unless I really need to only because py_installer is kind of pain to work with.
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
 Began
 
 Title:
 Summary:
 Status:
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began
+
+Title: mhk test script
+Summary: Tests script in sqlplus and reviews logs for errors automatically
+Status: I won't write this just because the payoff isn't worth it. Moving this to the bottom.
 
 Ended
 -----------------------------------------------------
