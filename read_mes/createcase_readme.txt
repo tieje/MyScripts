@@ -1,5 +1,3 @@
-README.txt
-
-To use this script do the following:
-
-Add 
+- python 3.7
+- update the script's default location to wherever you usually keep your cases
+- must be in the same folder as createtree.py

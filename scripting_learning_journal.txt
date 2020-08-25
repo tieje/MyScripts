@@ -146,6 +146,9 @@ I finished the sql script runner... but at a great cost...
 
 Of course the first time I use the actual scripts for practical use, the script-writer decides to spool to a txt file instead of a log file. I might need to make an update for this.
 
+The script came in clutch today. Saved me a lot of brainpower and time.
+
+I would like to share this script with Apoorva.
 
 
 
@@ -233,7 +236,7 @@ Ended 8/24/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
-Began
+Began 
 
 Title:
 Summary: Create script that creates a py_installer for shareable use

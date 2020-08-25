@@ -5,3 +5,6 @@ If you cannot download python onto your computer, repackage scripts with pyinsta
 
 The purpose of this script is to automate the process of file and folder creation.
 This was mostly for practice in python script writing to tackle a more specialized task.
+
+- python 3.7
+- This is actually the first script I've written for this project series: August, 2020

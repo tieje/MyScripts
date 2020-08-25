@@ -1,1 +1,3 @@
-Install pyperclip
+- python 3.7
+- run "pip install pyperclip"
+- this is a convenience script for me when I write my scripts whether at home or a work computer. Update the home and work values in the script to fit your personal usage. I recommend only doing this if you're planning on contacting me and contributing.
