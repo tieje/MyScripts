@@ -156,6 +156,10 @@ It seems like I'll be entering the SVN portion of my script projects. This shoul
 I'll be extending functionality of createcase.py to also create the correct folders in SVN and perform recursive commits.
 This will take a while to learn how to navigate SVN.
 
+8/25/2020
+
+I updated createcase.py so quickly that I forgot that I updated it today. Cool.
+I'd like to extend createcase.py functionality tonight but that depends on good I feel after I take a shower...
 
 
 
@@ -250,6 +254,16 @@ Summary: Make a script that creates the folder path for new deployments
 Status: Completed
 
 Ended 8/24/2020
+-----------------------------------------------------
+
+-----------------------------------------------------
+Began 8/25/2020
+
+Title: Update createcase.py
+Summary: Update createcase.py to reflect what you have learned
+Status: Completed
+
+Ended 8/25/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
@@ -363,16 +377,6 @@ Ended
 -----------------------------------------------------
 
 -----------------------------------------------------
-Began
-
-Title:
-Summary: Update createcase.py to reflect what you have learned
-Status:
-
-Ended
------------------------------------------------------
-
------------------------------------------------------
 Began 
 
 Title:
@@ -385,9 +389,9 @@ Ended
 -----------------------------------------------------
 Began
 
-Title:
-Summary:
-Status:
+Title: mhk test script
+Summary: Tests script in sqlplus and reviews logs for errors automatically
+Status: I won't write this just because the payoff isn't worth it. Moving this to the bottom.
 
 Ended
 -----------------------------------------------------
@@ -395,9 +399,9 @@ Ended
 -----------------------------------------------------
 Began
 
-Title: mhk test script
-Summary: Tests script in sqlplus and reviews logs for errors automatically
-Status: I won't write this just because the payoff isn't worth it. Moving this to the bottom.
+Title:
+Summary:
+Status:
 
 Ended
 -----------------------------------------------------
