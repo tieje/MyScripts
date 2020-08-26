@@ -267,6 +267,16 @@ Ended 8/25/2020
 -----------------------------------------------------
 
 -----------------------------------------------------
+Began 8/26/2020
+
+Title: ETL pipelines
+Summary: Study ETL pipelines for the job interview
+Status:
+
+Ended
+-----------------------------------------------------
+
+-----------------------------------------------------
 Began
 
 Title: Extend createcase functionality
