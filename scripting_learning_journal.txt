@@ -161,6 +161,10 @@ This will take a while to learn how to navigate SVN.
 I updated createcase.py so quickly that I forgot that I updated it today. Cool.
 I'd like to extend createcase.py functionality tonight but that depends on good I feel after I take a shower...
 
+8/26/2020
+
+Scripting Projects are on hold in preparation for potentially huge job interview.
+
 
 
 Projects
@@ -264,16 +268,6 @@ Summary: Update createcase.py to reflect what you have learned
 Status: Completed
 
 Ended 8/25/2020
------------------------------------------------------
-
------------------------------------------------------
-Began 8/26/2020
-
-Title: ETL pipelines
-Summary: Study ETL pipelines for the job interview
-Status:
-
-Ended
 -----------------------------------------------------
 
 -----------------------------------------------------
