@@ -4,9 +4,10 @@ import shutil
 
 class RunSqlScripts:
     # create the zz_drive.sql file based on existing examples
-    def __init__(self, working_directory, db_name):
+    def __init__(self, working_directory, db_name, pause_option):
         self.working_directory = working_directory
         self.db_name = db_name
+        self.pause_option = pause_option
     def create_driver(self):
         driver_name = "custom_driver.sql"
         os.chdir(self.working_directory)
@@ -46,7 +47,9 @@ class RunSqlScripts:
                 self.driver.write("\nspool " + i_string[:-4] + ".log;\n@" + os.path.join(self.working_directory, i_string) + ";\nspool off;")
             else:
                 self.driver.write("\n@" + os.path.join(self.working_directory,i_string))
-            self.driver.write("\n" + log_checker_sqlplus_command + " " + i_string + "\n\n")
+            self.driver.write("\n" + log_checker_sqlplus_command + " " + i_string + "\n")
+            if self.pause_option == 'yes' or self.pause_option == 'y':
+                self.driver.write("\nSET PAUSE ON\n" + "PAUSE Check results. Press Enter to begin running scripts again.\n\n")
         self.driver.write("\n"+"\n"+ending2)
         return self.driver
 
@@ -108,9 +111,10 @@ if __name__ == "__main__":
     return_loc = r"C:\CustomOfficeTemplates\current_code\MyScripts"
     tnsnamesora_path = r"C:\oracle\product\12.1.0\client_1\network\admin"
     prompt = '>'
-    message1 = "Enter the path the sql scripts, OR press enter if the cmd prompt is on the correct working directory."
+    message1 = "Enter the path of the sql scripts, OR press enter if the cmd prompt is on the correct working directory."
     message2 = "Enter the database name."
     message3 = "Please enter a valid database name or press Ctrl + C to exit."
+    message4 = "Type 'yes' if you would you like the script to pause in between running individual sql scripts. Otherwise press Enter."
     print(message1)
     working_directory = input(prompt)
     if bool(working_directory) == False:
@@ -123,4 +127,6 @@ if __name__ == "__main__":
         db_name = input(prompt)
         db_results = db_look_up(tnsnamesora_path, db_name)
     os.chdir(working_directory)
-    RunSqlScripts(working_directory, db_name).create_driver()
+    print(message4)
+    pause_option = input(prompt)
+    RunSqlScripts(working_directory, db_name, pause_option).create_driver()

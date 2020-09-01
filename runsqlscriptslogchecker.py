@@ -33,7 +33,7 @@ class RunSqlScriptsLogChecker:
             print("Please check errors in error_results.txt")
             print("Copy and paste the following into Windows Explorer:")
             print(os.path.join(self.path,'error_results.txt'))
-            time.sleep(10)
+            time.sleep(2)
             print("Are these errors OK? If these errors are OK, Enter 'yes'.")
             affirmative_resps = ('yes','y','ye','yse')
             response = input(prompt)
