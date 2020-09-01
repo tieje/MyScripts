@@ -1,0 +1,2 @@
+- python 3.7
+- run "pip install pyperclip"

@@ -1,0 +1,14 @@
+8/16/2020
+
+This script will need to work on multiple computers.
+
+absolute path at the top
+fairly simple and straightforward
+Two questions:
+"Would you like to create your script in the default location? If not, paste the script location."
+"What would you like this script to be called?"
+
+The bottom of the script will contain a main.
+
+The top of the script will contain a class that hass been automatically generated. I'll need to write code to the file which is doable, but I haven't done this before.
+
