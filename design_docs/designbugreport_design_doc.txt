@@ -1,0 +1,13 @@
+9/2/2020
+Bring this to the design doc later
+"""
+The process
+1. download excel sheet
+2. run script to design it (see if I can copy and paste it)
+3. rather than creating a folder system for each report, I'll keep a single report. When one report comes in, I'll copy the status up to a certain point from the old report, and paste them into the new report. The problem with this is possibly if a bug gets deleted... which would be bad... I'd like to compare if all the bugs are contained in the new report, but that would require me to determine which bugs are new or not. I guess I won't do that.
+4. The old report will be rename with old while the new report will be rename to be the current day report.
+5. Brian needs to update his changes in SVN to the new report.
+6. Then the cycle will begin again.
+
+"""
+
