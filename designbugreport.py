@@ -47,6 +47,7 @@ class DesignBugReport:
 if __name__ == "__main__":
 	default = r"C:\WebTesting_Jira\Reports"
 	#TODO: I'll need to confirm with the user to determine which is the new bug report and which is the old bug report
+	#TODO: Ask the user if the current default location correct, print out the default. If not then it will ask the user to change the default path variable
 	DesignBugReport(default)
 
 """
