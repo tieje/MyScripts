@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shutil
+import re
 
 class RunSqlScripts:
     # create the zz_drive.sql file based on existing examples
@@ -18,7 +19,7 @@ class RunSqlScripts:
         unordered_numbers = self.only_x(sqlfiles, ".sql")
         final_sql_order = self.sort_files(unordered_numbers)
         ordered_spools = self.check_spool(unordered_numbers, final_sql_order)
-        self.driver = open(driver_name,'w')     
+        self.driver = open(driver_name,'w')
         final_string = self.write_string(ordered_spools)
 
         print("Driver has been created.")
@@ -34,7 +35,7 @@ class RunSqlScripts:
             print("Folders have already been created.")
             pass
         self.driver.close()
-        subprocess.run("sqlplus sc_base/superman@"+self.db_name+" @"+os.path.join(self.working_directory,driver_name), shell=True)
+        subprocess.run("sqlplus system/superman@"+self.db_name+" @"+os.path.join(self.working_directory,driver_name), shell=True)
         return True
     # helper functions
     def write_string(self, sql_input):
@@ -44,10 +45,10 @@ class RunSqlScripts:
         for i in sql_input:
             i_string = str(i[0])
             if i[2] == 'nospool':
-                self.driver.write("\nspool " + i_string[:-4] + ".log;\n@" + os.path.join(self.working_directory, i_string) + ";\nspool off;")
+                self.driver.write("\nspool " + '"'+i_string[:-4] + '.log"'+'\n@"' + os.path.join(self.working_directory, i_string) + '";\nspool off;')
             else:
-                self.driver.write("\n@" + os.path.join(self.working_directory,i_string))
-            self.driver.write("\n" + log_checker_sqlplus_command + " " + i_string + "\n")
+                self.driver.write("\n@" +'"'+ i[0]+'"')
+            self.driver.write("\n" + log_checker_sqlplus_command + " " + '"'+i_string+' //// '+ i[3] + '"' "\n")
             if self.pause_option == 'yes' or self.pause_option == 'y':
                 self.driver.write("\nSET PAUSE ON\n" + "PAUSE Check results. Press Enter to begin running scripts again.\n\n")
         self.driver.write("\n"+"\n"+ending2)
@@ -55,17 +56,29 @@ class RunSqlScripts:
 
         # script list needs custom commands to run a short custom log checker
 
-
     def check_spool(self,spool_list, order_of_files):
         spool_exists = []
+        log_name = []
         for i in spool_list:
             file = open(i,'r')
-            if 'spool' in file.readlines()[0].lower():
+            first_lines = file.readlines()[:11]
+            spool_presence = False
+            for line in range(len(first_lines)):
+                if 'spool' in first_lines[line].lower():
+                    spool_presence = True
+                    spool_line = line
+                else:
+                    pass
+
+            if spool_presence:
                 spool_exists.append('spool')
+                log_name_in_file = re.search(' ' + '.+' + '(txt|log)$', first_lines[spool_line], re.I).group()
+                log_name.append(log_name_in_file[1:])
             else:
                 spool_exists.append('nospool')
-        spool_checked = zip(spool_list, order_of_files, spool_exists)
-        final_order = sorted(spool_checked, key=lambda files1: files1[1])
+                log_name.append(i[:-4] + '.log')
+        spool_checked = zip(spool_list, order_of_files, spool_exists, log_name)
+        final_order = sorted(spool_checked, key=lambda files1: int(files1[1]))
         return final_order
 
     def sort_files(self,file_list):
@@ -77,7 +90,7 @@ class RunSqlScripts:
             ordered_files.append((i,order))
             order_of_files.append(order)
         # order sql files
-        final_sql_order = sorted(ordered_files, key=lambda sqlfile: sqlfile[1])
+        final_sql_order = sorted(ordered_files, key=lambda sqlfile: int(sqlfile[1]))
         for x in final_sql_order:
             print(x)
         self.response = 'response'
@@ -94,7 +107,7 @@ class RunSqlScripts:
     def only_x(self, raw_list, file_type):
         files = []
         for i in raw_list:
-            if i[-4:] == file_type:
+            if i[-4:].lower() == file_type:
                 files.append(i)
             else:
                 pass

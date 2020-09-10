@@ -6,12 +6,12 @@ import sys
 from datetime import datetime
 
 class RunSqlScriptsLogChecker:
-    def __init__(self, sql_name, abs_dir, keywords):
+    def __init__(self, sql_name, abs_dir, keywords, sql_log_name):
         self.sql_name = sql_name
         self.path = abs_dir
         self.keywords = keywords
+        self.sql_log_name = sql_log_name
     def checking_logs(self):
-        sql_log_name = self.sql_name[:-4]+".log"
         log_folder = os.path.join(self.path,"logs")     
         try:
             shutil.move(self.sql_name, os.path.join(self.path,"scripts_ran",self.sql_name))
@@ -19,14 +19,14 @@ class RunSqlScriptsLogChecker:
             print(self.sql_name+" has already been moved.")
         no_errors = self.log_checker()
         try:
-            shutil.move(sql_log_name, os.path.join(self.path,"logs",sql_log_name))
+            shutil.move(self.sql_log_name, os.path.join(self.path,"logs",self.sql_log_name))
         except:
-            print(sql_log_name+" has already been moved.")
+            print(self.sql_log_name+" has already been moved.")
         if no_errors:
             try:
-                shutil.move(os.path.join(log_folder, sql_log_name), os.path.join(self.path,"logs","no_error_logs"))
+                shutil.move(os.path.join(log_folder, self.sql_log_name), os.path.join(self.path,"logs","no_error_logs"))
             except:
-                print(sql_log_name + " is already in no_error_logs")
+                print(self.sql_log_name + " is already in no_error_logs")
             print(self.sql_name + " ran without errors.")
         else:
             print("Errors found in " + self.sql_name)
@@ -48,7 +48,7 @@ class RunSqlScriptsLogChecker:
                 shutil.move(os.path.join(self.path,"error_results.txt"),os.path.join(self.path,"past_error_results","error_results_"+datetime.now().strftime("%H_%M_%d_%m")+".txt"))
             except:
                 print("Error_results.txt has already been moved.")
-        print(sql_log_name+" was checked.")
+        print(self.sql_log_name+" was checked.")
         return False
     def log_checker(self):
         total_errors = 0
@@ -98,5 +98,7 @@ if __name__ == "__main__":
         'WARNING'
         ]
     current_directory = os.getcwd()
-    sql_file_name = sys.argv[1]
-    RunSqlScriptsLogChecker(sql_file_name, current_directory, keywords).checking_logs()
+    big_name = sys.argv[1].split(' //// ')
+    sql_file_name = big_name[0]
+    sql_log_name = big_name[1]
+    RunSqlScriptsLogChecker(sql_file_name, current_directory, keywords, sql_log_name).checking_logs()
