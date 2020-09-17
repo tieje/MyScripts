@@ -1,9 +1,24 @@
-- python 3.7
-- pip install xlwings
-- change the "default" variable to be the path of the folder that contains the folders for company-specific bug reports
-- will not work correctly if there are more than 26 columns
+Instructions for BRMs
+
+1. Please checkout the company-specific folder from SVN.
+    a. In this case they will be located in the following location in SVN:
+    svn:https://mpsvn.medhokapps.com/cps/CPS/_Sandbox/ThomasF/WebTesting_Jira/Reports/KPC
+
+2. If you want to make changes to the bug report, please do the following:
+    a. First Update from SVN.
+    b. You can make your changes to the Excel file labeled with "NEW".
+    c. Keep in mind that only changes made to the "Status" column will be saved from one report to the next.
+    c. Commit changes to SVN.
+
 
 ------------------------------------------------------
+
+User Notes
+
+- python 3.7
+- pip install xlwings==0.16.4
+- change the "default" variable to be the path of the folder that contains the folders for company-specific bug reports
+- will not work correctly if there are more than 26 columns
 
 Steps for using this script
 
@@ -20,6 +35,7 @@ Steps for using this script
 	- Resolution
 	- Status
 	- Summary
+	- Linked Tickets
     Use these as your default columns.
 
 
@@ -34,22 +50,10 @@ Steps for using this script
     Putting the New and Old in front will be important.
 
 5. Run the script: designbugreport.py
+	# From the command line while in the correct folder.
 
 6. Commit changes to SVN.
 
-------------------------------------------------------
-
-Instructions for BRMs
-
-1. Please checkout the company-specific folder from SVN.
-    a. In this case they will be located in the following location in SVN:
-    svn:https://mpsvn.medhokapps.com/cps/CPS/_Sandbox/ThomasF/WebTesting_Jira/Reports/KPC
-
-2. If you want to make changes to the bug report, please do the following:
-    a. First Update from SVN.
-    b. You can make your changes to the Excel file labeled with "NEW".
-    c. Keep in mind that only changes made to the "Status" column will be saved from one report to the next.
-    c. Commit changes to SVN.
 
 For more information, about the script please refer to the designbugreport.py file and the /read_mes/designbugreport_readme.txt file from the following link:
 

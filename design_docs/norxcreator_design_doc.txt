@@ -1,0 +1,37 @@
+9/17/2020
+
+There are three parts to the NoRx File: the header record, detail record, and the trailer record
+
+
+Gentran Mailbox/TIBCO MFT Internet Server:
+P.Rxxxxx.#NORX.Dyymmdd.Thhmmsst
+
+Connect:Direct (Mainframe):
+zzzzzzzz.Rxxxxx.#NORX.Dyymmdd.Thhmmsst
+
+Connect:Direct (Non-Mainframe):
+[directory]Rxxxxx.#NORX.Dyymmdd.Thhmmsst
+
+system
+MBD
+
+type
+data file
+
+frequency
+monthly
+
+file length
+750
+
+spaces will be used as filler
+Page 118 is specific to the file design on a character basis so it's fairly accurate. Refer to that page instead of copying and pasting the information to this design doc.
+
+Considerations
+
+The problems are the following:
+
+MBI has no specified valid values in the Detail Record
+
+I wouldn't worry so much about it. I'll put in the variables later.
+
