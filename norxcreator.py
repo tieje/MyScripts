@@ -49,12 +49,12 @@ class NoRxCreator:
 		# Detail Record
 		self.record_type = "NRX"
 		self.rec_type_orig_det = 4 * " "
-		self.HICN_or_RRB_number = "fill in later" # TODO: I don't really understand what to put in here
-		self.SSN = "333224444" # TODO: It can probably be any number
-		self.MBI = "not really sure what to put in here" # TODO: I don't really understand what to put in here
+		self.HICN_or_RRB_number = "123255246A "
+		self.SSN = "123456789"
+		self.MBI = "gdftctrlpo"
 		self.detail_filler_1 = 48 * " "
-		self.contract_number = " " # TODO: PUT IN CONTRACT NUMBER FROM CMS. Not sure what to put in here
-		self.pbp_number = " " # TODO: Can this just be any number?
+		self.contract_number = "0001"
+		self.pbp_number = "001"
 		self.detail_filler_2 = 70 * " "		
 		self.detail_filler_3 = 573 * " "
 		# Trailer Record
