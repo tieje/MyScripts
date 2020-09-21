@@ -1,0 +1,6 @@
+9/21/2020
+
+Input: plus-minus method of to-do
+
+Output: Interactive GUI that allows people to see what has been done, and what needs to be done from the txt file.
+
