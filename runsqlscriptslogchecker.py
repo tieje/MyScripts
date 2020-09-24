@@ -40,19 +40,11 @@ class RunSqlScriptsLogChecker:
             while response not in affirmative_resps:
                 print("Please press 'Ctrl + C' to end all scripts. Otherwise, Enter 'yes' to signal that these errors are acceptable.")
                 response = input(prompt)
-            try:
-                os.mkdir('past_error_results')
-            except:
-                print("past_error_results is already a folder")
-            try:
-                shutil.move(os.path.join(self.path,"error_results.txt"),os.path.join(self.path,"past_error_results","error_results_"+datetime.now().strftime("%H_%M_%d_%m")+".txt"))
-            except:
-                print("Error_results.txt has already been moved.")
         print(self.sql_log_name+" was checked.")
         return False
     def log_checker(self):
         total_errors = 0
-        errors = open('error_results.txt','w')
+        errors = open('error_results.txt','a')
         os.chdir(self.path)
         dir_list = os.listdir(self.path)
         logs_list = self.only_logs(dir_list)
@@ -71,9 +63,9 @@ class RunSqlScriptsLogChecker:
                     else:
                         pass
         print(str(total_errors) + ' errors present.')
+        errors.close()
         if total_errors == 0:
             print("No errors, you're all set!")
-            errors.close()
             return True
         return False
     def only_logs(self, raw_list):

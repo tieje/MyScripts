@@ -35,7 +35,7 @@ class RunSqlScripts:
             print("Folders have already been created.")
             pass
         self.driver.close()
-        subprocess.run("sqlplus system/superman@"+self.db_name+" @"+os.path.join(self.working_directory,driver_name), shell=True)
+        subprocess.run("sqlplus sc_base/superman@"+self.db_name+" @"+os.path.join(self.working_directory,driver_name), shell=True)
         return True
     # helper functions
     def write_string(self, sql_input):
