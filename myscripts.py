@@ -6,13 +6,13 @@ class MyScripts:
         self.home = home
         self.work = work
     def ChangeDir(self):
-        message = "Immediately paste into the command line."
+        message = "MyScripts path has been copied to clipboard."
         try:
             os.chdir(self.work)
-            pyperclip.copy('cd ' + self.work)
+            pyperclip.copy(self.work)
         except:
             os.chdir(self.home)
-            pyperclip.copy('cd ' + self.home)
+            pyperclip.copy(self.home)
         print(message)
         return None
 if __name__ == "__main__":
