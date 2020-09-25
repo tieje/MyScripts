@@ -44,18 +44,18 @@ class NoRxCreator:
 		# Header
 		self.file_id_name = "CMSNRX0H"
 		self.sending_entity = "MBD" + 5 * " "
-		self.file_creation_date = "20200717"
+		self.file_creation_date = "20200617"
 		self.file_control_number = 9 * " "
 		self.header_filler = 717 * " "
 		# Detail Record
 		self.record_type = "NRX"
 		self.rec_type_orig_det = 5 * " "
-		self.HICN_or_RRB_number = "00023742958 "
-		self.SSN = "619277332"
-		self.MBI = "00023742958"
+		self.HICN_or_RRB_number = "000237     "
+		self.SSN = "362291448"
+		self.MBI = "00023742959"
 		self.detail_filler_1 = 49 * " "
 		self.contract_number = "H5262"
-		self.pbp_number = "005"
+		self.pbp_number = "001"
 		self.detail_filler_2 = 71 * " "
 		self.detail_filler_3 = 574 * " "
 		# Trailer Record

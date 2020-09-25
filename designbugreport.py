@@ -104,7 +104,7 @@ class DesignBugReport:
         return None
 
 if __name__ == "__main__":
-    default = r"C:\WebTesting_Jira\Reports"
+    default = r"C:\Jira_Reports"
     prompt = '>'
     print("Is the following the correct default path? If yes, then press enter. If not, then press Ctrl + C to cancel the script and go change the default.")
     print(default)
