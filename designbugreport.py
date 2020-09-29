@@ -18,6 +18,7 @@ class DesignBugReport:
     def controlla(self):
         self.excel_finder()
         self.design_excel()
+        print('Completed')
         return None
     def excel_finder(self):
         os.chdir(default)
@@ -64,12 +65,16 @@ class DesignBugReport:
         counterA = 1
         # counterB finds number of filled rows
         counterB = 1
-        cut_off = 'MPCORE-167'
+        # custom cut off from old bugs. Copy and paste
+        if any(['kpc' in i.lower() for i in os.listdir()]):
+            self.cut_off = 'MPCORE-167'
+        elif any(['aet' in i.lower() for i in os.listdir()]):
+            self.cut_off = 'MPCORE-166'
         trigger = True
         cell_value = self.sht.range('A2').value
         while bool(cell_value) != False:
             if trigger:
-                if cell_value == cut_off:
+                if cell_value == self.cut_off:
                     trigger = False
                 self.status_checker(str(counterA))
                 counterA += 1
@@ -80,7 +85,9 @@ class DesignBugReport:
         # copy status from old excel
         cell_value = self.sht.range('A2').value
         counterA = 1
+        self.contingent_error_counter = 1
         while bool(cell_value):
+            self.contingent_error_counter += 1
             self.copy_excel(counterA)
             counterA += 1
             cell_value = self.sht.range('A'+str(counterA)).value
@@ -97,8 +104,10 @@ class DesignBugReport:
             self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (124,252,0)
         return None
     def copy_excel(self, row_n):
-        while self.copy_sht.range('A'+str(row_n)).value != self.sht.range('A'+str(row_n+self.copy_counter)).value:
+        while self.copy_sht.range('A'+str(row_n)).value != self.sht.range('A'+str(row_n+self.copy_counter)).value and bool(self.copy_sht.range('A'+str(row_n)).value):
             self.copy_counter += 1
+            if self.copy_counter >= 200:
+                print('Press Ctrl + C to stop this script. There is a mismatching bug around row ' + str(self.contingent_error_counter) + '. Compare with the old report and look at Label column to see if you exported the correct report.')
         if self.copy_sht.range(self.old_status_col+str(row_n)).value not in self.normal_statuses:
             self.sht.range(self.status_col+str(row_n+self.copy_counter)).value = self.copy_sht.range(self.old_status_col+str(row_n)).value
         return None
