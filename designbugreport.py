@@ -48,6 +48,8 @@ class DesignBugReport:
                 self.status_col = chr(i)
             if cell_value == 'External Tracking #':
                 self.sht.range(chr(i)+'1').value = 'External Tracking # (for client use)'
+            if cell_value.lower() == 'resolution':
+                self.resolution_col = chr(i)
             i += 1
             cell_value = self.sht.range(chr(i)+'1').value
         self.right_limit=chr(i)
@@ -97,11 +99,16 @@ class DesignBugReport:
         if cell_val == 'Requirements':
             # Blue color is RGB of 55,70,150 respectively
             self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (135,206,235)
-        elif cell_val == 'In Progress':
+        elif cell_val.lower() == 'in progress':
             # yellow color is RGB of 255,220,50
             self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (255,220,50)
-        elif cell_val == 'Done':
-            self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (124,252,0)
+        elif cell_val.lower() == 'done':
+            if self.sht.range(self.resolution_col+row_n).value.lower() == 'cannot reproduce':
+                # change it to yellow and ask for client attention
+                self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (255,220,50)
+                self.sht.range(self.resolution_col+row_n).value = 'Cannot reproduce, needs client attention.'
+            else:
+                self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (124,252,0)
         return None
     def copy_excel(self, row_n):
         while self.copy_sht.range('A'+str(row_n)).value != self.sht.range('A'+str(row_n+self.copy_counter)).value and bool(self.copy_sht.range('A'+str(row_n)).value):
