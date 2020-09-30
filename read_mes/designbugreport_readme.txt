@@ -2,7 +2,7 @@ Instructions for BRMs
 
 1. Please checkout the company-specific folder from SVN.
     a. In this case they will be located in the following location in SVN:
-    svn:https://mpsvn.medhokapps.com/cps/CPS/_Sandbox/ThomasF/WebTesting_Jira/Reports/KPC
+    svn:https://mpsvn.medhokapps.com/cps/CPS/_Sandbox/ThomasF/Jira_Reports
 
 2. If you want to make changes to the bug report, please do the following:
     a. First Update from SVN.
@@ -41,8 +41,8 @@ Steps for using this script
 
 3. Save the export as an .xlsx file in your company-specific default folder:
 	Ex.
-	default is C:\WebTesting_Jira\Reports
-	company-specific default is C:\WebTesting_Jira\Reports\KPC
+	default is C:\Jira_Reports
+	company-specific default is C:\Jira_Reports\KPC
 
 4. Rename your reports in the following way:
     NEW_[COMPANY NAME]_BUG_REPORT_09_03_2020
