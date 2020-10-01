@@ -105,7 +105,7 @@ class DesignBugReport:
         elif cell_val.lower() == 'done':
             if self.sht.range(self.resolution_col+row_n).value.lower() == 'cannot reproduce':
                 # change it to yellow and ask for client attention
-                self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (255,220,50)
+                self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (182, 149, 192)
                 self.sht.range(self.resolution_col+row_n).value = 'Cannot reproduce, needs client attention.'
             else:
                 self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (124,252,0)
