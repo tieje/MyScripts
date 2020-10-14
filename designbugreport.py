@@ -44,11 +44,11 @@ class DesignBugReport:
         i = 65
         cell_value = self.sht.range(chr(i)+'1').value
         while bool(cell_value):
-            if cell_value.lower() == 'status':
+            if cell_value == 'Status':
                 self.status_col = chr(i)
             if cell_value == 'External Tracking #':
                 self.sht.range(chr(i)+'1').value = 'External Tracking # (for client use)'
-            if cell_value.lower() == 'resolution':
+            if cell_value == 'Resolution':
                 self.resolution_col = chr(i)
             i += 1
             cell_value = self.sht.range(chr(i)+'1').value
@@ -57,7 +57,7 @@ class DesignBugReport:
         d = 65
         cell_value = self.copy_sht.range(chr(d)+'1').value
         while bool(cell_value):
-            if cell_value.lower() == 'status':
+            if cell_value == 'Status':
                 self.old_status_col = chr(d)
             d += 1
             cell_value = self.copy_sht.range(chr(d)+'1').value
@@ -99,19 +99,19 @@ class DesignBugReport:
         if cell_val == 'Requirements':
             # Blue color is RGB of 55,70,150 respectively
             self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (135,206,235)
-        elif cell_val.lower() == 'in progress':
+        elif cell_val == 'In Progress':
             # yellow color is RGB of 255,220,50
             self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (255,220,50)
-        elif cell_val.lower() == 'done':
-            if self.sht.range(self.resolution_col+row_n).value.lower() == 'cannot reproduce':
+        elif cell_val == 'Done':
+            if self.sht.range(self.resolution_col+row_n).value == 'Cannot Reproduce':
                 # change it to yellow and ask for client attention
                 self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (182, 149, 192)
-                self.sht.range(self.resolution_col+row_n).value = 'Cannot reproduce, might need additional info from client attention.'
+                self.sht.range(self.resolution_col+row_n).value = 'Cannot reproduce, might need additional info from client.'
             else:
                 self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (124,252,0)
         return None
     def copy_excel(self, row_n):
-        while self.copy_sht.range('A'+str(row_n)).value != self.sht.range('A'+str(row_n+self.copy_counter)).value:
+        while self.copy_sht.range('A'+str(row_n)).value != self.sht.range('A'+str(row_n+self.copy_counter)).value and bool(self.sht.range('A'+str(row_n+self.copy_counter)).value):
             self.copy_counter += 1
             if self.copy_counter >= 200:
                 print('Press Ctrl + C to stop this script. There is a mismatching bug around row ' + str(self.contingent_error_counter) + 'on the old excel doc. Compare with the old report and look at Label column to see if you exported the correct report. Delete the incorrect rows from the old report.')
