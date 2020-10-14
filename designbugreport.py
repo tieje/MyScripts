@@ -111,10 +111,10 @@ class DesignBugReport:
                 self.sht.range('A'+row_n+':'+self.right_limit+row_n).color = (124,252,0)
         return None
     def copy_excel(self, row_n):
-        while self.copy_sht.range('A'+str(row_n)).value != self.sht.range('A'+str(row_n+self.copy_counter)).value and bool(self.copy_sht.range('A'+str(row_n)).value):
+        while self.copy_sht.range('A'+str(row_n)).value != self.sht.range('A'+str(row_n+self.copy_counter)).value:
             self.copy_counter += 1
             if self.copy_counter >= 200:
-                print('Press Ctrl + C to stop this script. There is a mismatching bug around row ' + str(self.contingent_error_counter) + '. Compare with the old report and look at Label column to see if you exported the correct report.')
+                print('Press Ctrl + C to stop this script. There is a mismatching bug around row ' + str(self.contingent_error_counter) + 'on the old excel doc. Compare with the old report and look at Label column to see if you exported the correct report. Delete the incorrect rows from the old report.')
         if self.copy_sht.range(self.old_status_col+str(row_n)).value not in self.normal_statuses:
             self.sht.range(self.status_col+str(row_n+self.copy_counter)).value = self.copy_sht.range(self.old_status_col+str(row_n)).value
         return None
